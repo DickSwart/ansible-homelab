@@ -1,0 +1,10 @@
+---
+# command: ansible-playbook ./playbooks/apt-dist.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+#
+
+- hosts: "*"
+  tasks:
+    - name: apt
+      apt:
+        update_cache: yes
+        upgrade: 'dist'

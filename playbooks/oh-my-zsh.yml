@@ -1,0 +1,11 @@
+---
+# command: ansible-playbook ./playbooks/oh-my-zsh.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+# Use "ansible-galaxy install gantsign.oh-my-zsh" first.
+# https://galaxy.ansible.com/gantsign/oh-my-zsh
+#
+
+- hosts: "*"
+  roles:
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: dickswart ## Username of the account you'd like to install Oh-My-Zsh to.

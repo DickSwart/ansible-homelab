@@ -1,0 +1,13 @@
+---
+# command: ansible-playbook ./playbooks/zsh.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+#
+
+- name: install latest zsh on all hosts
+  hosts: "*"
+  tasks:
+    - name: install zsh
+      apt:
+        name: zsh
+        state: present
+        update_cache: true
+      become: true

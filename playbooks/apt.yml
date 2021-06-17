@@ -1,0 +1,11 @@
+---
+# command: ansible-playbook ./playbooks/apt.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+#
+
+- hosts: "*"
+  become: yes
+  tasks:
+    - name: apt
+      apt:
+        update_cache: yes
+        upgrade: 'yes'

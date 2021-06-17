@@ -1,0 +1,23 @@
+---
+# command: ansible-playbook ./playbooks/timezone.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+#
+
+- name: Set timezone and configure timesyncd
+  hosts: "*"
+  become: yes
+  tasks:
+  - name: set timezone
+    shell: timedatectl set-timezone Pacific/Auckland
+
+  - name: Make sure timesyncd is stopped
+    systemd:
+      name: systemd-timesyncd.service
+      state: stopped
+
+  - name: Copy over the timesyncd config
+    template: src=../templates/timesyncd.conf dest=/etc/systemd/timesyncd.conf
+
+  - name: Make sure timesyncd is started
+    systemd:
+      name: systemd-timesyncd.service
+      state: started

@@ -1,0 +1,15 @@
+---
+# command: ansible-playbook ./playbooks/resize-lvm.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+# Install Ansible Galaxy community collection first. "ansible-galaxy collection install community.general"
+# https://galaxy.ansible.com/community/general
+#
+
+- hosts: "*"
+  become: yes
+  tasks:
+    - name: Extend the logical volume to take all remaining space of the PVs and resize the underlying filesystem
+      community.general.lvol:
+        vg: ubuntu-vg
+        lv: ubuntu-lv
+        size: +100%FREE
+        resizefs: true

@@ -1,0 +1,9 @@
+---
+# command: ansible-playbook ./playbooks/pihole-update.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+#
+
+- name: Update pihole
+  hosts: "*"
+  tasks:
+  - name: pihole update
+    shell: pihole -up
