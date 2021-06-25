@@ -13,3 +13,5 @@ public
 docs
 .nyc_output
 cassettes
+
+**/vault.yml

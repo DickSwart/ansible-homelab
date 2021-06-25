@@ -35,4 +35,5 @@ ansible-playbook ./playbooks/apt.yml --user someuser --ask-pass --ask-become-pas
 
 ## Referance
 - [Ansible documentation](https://docs.ansible.com/ansible/latest/installation_guide/index.html)
+- [Ansible Vault](https://docs.ansible.com/ansible/latest/user_guide/vault.html)
 - [Techno Tim - Automate EVERYTHING with Ansible! Video](https://www.youtube.com/watch?v=w9eCU4bGgjQ)

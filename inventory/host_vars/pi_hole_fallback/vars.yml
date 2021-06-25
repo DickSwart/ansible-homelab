@@ -1,0 +1,8 @@
+---
+
+# Commands
+# Edit : env EDITOR=nano ansible-vault edit ~/ansible-homelab/inventory/host_vars/pi_hole_fallback/vault.yml
+#
+
+ssh_user: "{{vault_ssh_user}}"
+ssh_private_key_file_path: "{{vault_ssh_private_key_file_path}}"

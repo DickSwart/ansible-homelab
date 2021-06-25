@@ -1,9 +1,11 @@
 ---
-# command: ansible-playbook ./playbooks/apt.yml --user dickswart --private-key ~/.ssh/id_rsa --ask-become-pass -i ./inventory/hosts
+# command: ansible-playbook ~/ansible-homelab/playbooks/apt.yml --ask-vault-pass
 #
 
-- hosts: "*"
+- name: update servers
+  hosts: ubuntu_servers
   become: yes
+
   tasks:
     - name: apt
       apt:

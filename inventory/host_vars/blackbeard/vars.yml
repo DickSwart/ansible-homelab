@@ -1,0 +1,10 @@
+---
+
+# Commands
+# Edit : env EDITOR=nano ansible-vault edit ~/ansible-homelab/inventory/host_vars/blackbeard/vault.yml
+#
+
+ssh_user: "{{vault_ssh_user}}"
+ssh_password: "{{vault_ssh_password}}"
+ssh_private_key_file_path: "{{vault_ssh_private_key_file_path}}"
+ssh_port: "{{vault_ssh_port}}"
